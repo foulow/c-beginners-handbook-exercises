@@ -8,6 +8,7 @@ CFLAGS = -O2 -Wall -Werror
 SRCS = $(wildcard *.c)
 OUT_DIR = bin
 OUT_EXT = out
+
 # rules
 .PHONY: all clean
 

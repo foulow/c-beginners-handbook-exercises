@@ -1,9 +1,11 @@
 # c-beginners-handbook-exercises
+
 A quick repo with my exercises' solutions for the c beginners handbook.
 
 To compile all files use `Make` to generate the executable bin files for each example.
 
 ```bash
+$> cd exercises
 $> make all
 ```
 
