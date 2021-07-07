@@ -1,0 +1,72 @@
+{
+    "clientes": [
+        {
+            "codigo_cliente": 0,
+            "nombre_cliente": "Jeffrey",
+            "apellido1_cliente": "Jose",
+            "apellido2_cliente": "de la Rosa",
+            "usuario": "issaul",
+            "programa": "CDEE",
+            "fecha_actual": "06/07/2021",
+            "telefonos": [
+                {
+                    "codigo_felefono": 0,
+                    "numero": "849-856-7932",
+                    "usuario": "issaul",
+                    "programa": "CDEE",
+                    "fecha_actual": "06/07/2021"
+                }
+            ]
+        },
+        {
+            "codigo_cliente": 1,
+            "nombre_cliente": "Jesse",
+            "apellido1_cliente": "Jose",
+            "apellido2_cliente": "de la Rosa",
+            "usuario": "jerajo",
+            "programa": "EDEE",
+            "fecha_actual": "06/07/2021",
+            "telefonos": [
+                {
+                    "codigo_felefono": 0,
+                    "numero": "809-977-3446",
+                    "usuario": "jerajo",
+                    "programa": "EDEE",
+                    "fecha_actual": "06/07/2021"
+                }
+            ]
+        },
+        {
+            "codigo_cliente": 2,
+            "nombre_cliente": "Juan",
+            "apellido1_cliente": "Jose",
+            "apellido2_cliente": "Jose",
+            "usuario": "jjose",
+            "programa": "JCEE",
+            "fecha_actual": "06/07/2021",
+            "telefonos": [
+                {
+                    "codigo_felefono": 0,
+                    "numero": "809-702-8043",
+                    "usuario": "jjose",
+                    "programa": "JCEE",
+                    "fecha_actual": "06/07/2021"
+                },
+                {
+                    "codigo_felefono": 1,
+                    "numero": "809-732-8043",
+                    "usuario": "jjose",
+                    "programa": "JCEE",
+                    "fecha_actual": "06/07/2021"
+                },
+                {
+                    "codigo_felefono": 2,
+                    "numero": "809-991-0263",
+                    "usuario": "jjose",
+                    "programa": "JCEE",
+                    "fecha_actual": "06/07/2021"
+                }
+            ]
+        }
+    ]
+}

@@ -11,7 +11,7 @@ typedef struct {
     char usuario[9];
     char programa[16];
     char fecha_actual[9];
-    TELEFONO *telefono;
+    TELEFONO *telefonos;
 } CLIENTE;
 
 #endif
