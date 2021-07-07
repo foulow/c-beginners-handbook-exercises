@@ -122,12 +122,12 @@ void mostrar_clientes_con_telefonos(size_t numero_clientes, CLIENTE *clientes) {
             cliente->nombre_cliente, cliente->apellido1_cliente, cliente->apellido2_cliente, cliente->usuario, cliente->programa, cliente->fecha_actual);
 
         printf("\t Telefonos registrados para cliente: %lu\n", cliente->codigo_cliente);
-        for (size_t j = 0; j < 20; j++) {
+        for (size_t j = 0; j < MAX_TELEFONOS; j++) {
             TELEFONO *telefono = &*(cliente->telefonos + j);
 
-            if (telefono->codigo_felefono != j)
-                break;
+            if (telefono->codigo_felefono != j) break;
 
+            printf("telefono: %lu\n", telefono->codigo_felefono);
             printf(" %s, %s,\n %s, %s\n",
                 telefono->numero, telefono->usuario, telefono->programa, telefono->fecha_actual);
         }

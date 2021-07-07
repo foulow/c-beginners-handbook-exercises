@@ -10,7 +10,7 @@
             "fecha_actual": "06/07/2021",
             "telefonos": [
                 {
-                    "codigo_felefono": 0,
+                    "codigo_telefono": 0,
                     "numero": "849-856-7932",
                     "usuario": "issaul",
                     "programa": "CDEE",
@@ -28,7 +28,7 @@
             "fecha_actual": "06/07/2021",
             "telefonos": [
                 {
-                    "codigo_felefono": 0,
+                    "codigo_telefono": 0,
                     "numero": "809-977-3446",
                     "usuario": "jerajo",
                     "programa": "EDEE",
@@ -46,21 +46,21 @@
             "fecha_actual": "06/07/2021",
             "telefonos": [
                 {
-                    "codigo_felefono": 0,
+                    "codigo_telefono": 0,
                     "numero": "809-702-8043",
                     "usuario": "jjose",
                     "programa": "JCEE",
                     "fecha_actual": "06/07/2021"
                 },
                 {
-                    "codigo_felefono": 1,
+                    "codigo_telefono": 1,
                     "numero": "809-732-8043",
                     "usuario": "jjose",
                     "programa": "JCEE",
                     "fecha_actual": "06/07/2021"
                 },
                 {
-                    "codigo_felefono": 2,
+                    "codigo_telefono": 2,
                     "numero": "809-991-0263",
                     "usuario": "jjose",
                     "programa": "JCEE",
