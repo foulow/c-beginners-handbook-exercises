@@ -193,29 +193,29 @@ size_t obtener_clientes_con_telefonos(CLIENTE **out_clientes) {
     return cantidad_clientes;
 }
 
-u_short registrar_cliente(CLIENTE **for_clientes, size_t cantidad_clientes) {
+u_short registrar_cliente(CLIENTE *for_clientes, size_t cantidad_clientes) {
     printf("\n\nPantalla de registro de cliente:\n");
-    for_clientes[cantidad_clientes]->codigo_cliente = cantidad_clientes;
+    for_clientes[cantidad_clientes].codigo_cliente = cantidad_clientes;
 
     printf("Digite el nombre: ");
     limpiar_buffer_entrada();
-    scanf("%30s", for_clientes[cantidad_clientes]->nombre_cliente);
+    scanf("%30s", for_clientes[cantidad_clientes].nombre_cliente);
 
     printf("Digite el primer apellido: ");
     limpiar_buffer_entrada();
-    scanf("%20s", for_clientes[cantidad_clientes]->apellido1_cliente);
+    scanf("%20s", for_clientes[cantidad_clientes].apellido1_cliente);
 
     printf("Digite el segundo apellido: ");
     limpiar_buffer_entrada();
-    scanf("%20s", for_clientes[cantidad_clientes]->apellido2_cliente);
+    scanf("%20s", for_clientes[cantidad_clientes].apellido2_cliente);
 
     printf("Digite el usuario: ");
     limpiar_buffer_entrada();
-    scanf("%8s", for_clientes[cantidad_clientes]->usuario);
+    scanf("%8s", for_clientes[cantidad_clientes].usuario);
 
     printf("Digite el programa: ");
     limpiar_buffer_entrada();
-    scanf("%15s", for_clientes[cantidad_clientes]->programa);
+    scanf("%15s", for_clientes[cantidad_clientes].programa);
 
     char date_str[10];
     time_t t = time(NULL);
@@ -231,20 +231,22 @@ u_short registrar_cliente(CLIENTE **for_clientes, size_t cantidad_clientes) {
     char year_str[5];
     snprintf(year_str, 5, "%d", tm.tm_year + 1900);
     strcat(date_str, year_str);
-    strcpy(for_clientes[cantidad_clientes]->fecha_actual, date_str);
+    strcpy(for_clientes[cantidad_clientes].fecha_actual, date_str);
 
     return 1;
 }
 
-u_short eliminar_cliente(CLIENTE **from_clientes, long codigo_cliente);
+u_short eliminar_cliente(CLIENTE *from_clientes, long codigo_cliente);
 
-u_short actualizar_cliente(CLIENTE **from_clientes, long codigo_cliente);
+u_short actualizar_cliente(CLIENTE *from_clientes, long codigo_cliente);
 
 
 // Funciones para el manejo de telefonos
 size_t obtener_telefonos_cliente(TELEFONO **out_telefono, long codigo_cliente);
 
-u_short agregar_telefono_cliente(TELEFONO **for_telefonos, size_t cantidad_telefonos) {
+u_short agregar_telefono_cliente(CLIENTE *for_cliente) {
+    TELEFONO *for_telefonos = for_cliente->telefonos;
+    ssize_t cantidad_telefonos = for_cliente->cantidad_telefonos;
 
     limpiar_pantalla();
 
@@ -253,35 +255,17 @@ u_short agregar_telefono_cliente(TELEFONO **for_telefonos, size_t cantidad_telef
     char input = EOF;
     for (size_t i = cantidad_telefonos; i < MAX_TELEFONOS; i++)
     {
-        for_telefonos[i]->codigo_felefono = i;
+        for_telefonos[i].codigo_felefono = i;
 
         printf("Digite el numero: ");
         limpiar_buffer_entrada();
-        scanf("%20s", for_telefonos[i]->numero);
+        scanf("%20s", for_telefonos[i].numero);
 
-        printf("Digite el usuario: ");
-        limpiar_buffer_entrada();
-        scanf("%8s", for_telefonos[i]->usuario);
+        strcpy(for_telefonos[i].usuario, for_cliente->usuario);
 
-        printf("Digite el programa: ");
-        limpiar_buffer_entrada();
-        scanf("%15s", for_telefonos[i]->programa);
+        strcpy(for_telefonos[i].programa, for_cliente->programa);
 
-        char date_str[10];
-        time_t t = time(NULL);
-        struct tm tm = *localtime(&t);
-        char day_str[3];
-        snprintf(day_str, 3, "%d", tm.tm_mday);
-        strcpy(date_str, day_str);
-        strcat(date_str, "/");
-        char month_str[3];
-        snprintf(month_str, 3, "%d", tm.tm_mon + 1);
-        strcat(date_str, month_str);
-        strcat(date_str, "/");
-        char year_str[5];
-        snprintf(year_str, 5, "%d", tm.tm_year + 1900);
-        strcat(date_str, year_str);
-        strcpy(for_telefonos[i]->fecha_actual, date_str);
+        strcpy(for_telefonos[i].fecha_actual, for_cliente->fecha_actual);
 
         printf("Deseas seguir agregando mas telefonos? Si<S,s>:\n\n");
         limpiar_buffer_entrada();
@@ -296,8 +280,8 @@ u_short agregar_telefono_cliente(TELEFONO **for_telefonos, size_t cantidad_telef
     return cantidad_telefonos;
 }
 
-u_short eliminar_telefono_cliente(TELEFONO **from_telefonos, long codigo_telefono);
-u_short actualizar_telefono_cliente(TELEFONO **from_telefonos, long codigo_telefono);
+u_short eliminar_telefono_cliente(TELEFONO *from_telefonos, long codigo_telefono);
+u_short actualizar_telefono_cliente(TELEFONO *from_telefonos, long codigo_telefono);
 
 
 // Funciones para la persistencia de datos

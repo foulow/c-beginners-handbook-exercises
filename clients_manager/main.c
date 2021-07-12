@@ -103,11 +103,11 @@ void mostrar_sub_menu_registrar_cliente() {
     limpiar_pantalla();
 
     // cc => cantidad de clientes agredados. [min = 0, max = 1]
-    u_short cc = registrar_cliente(&__clientes, __cantidad_clientes);
+    u_short cc = registrar_cliente(__clientes, __cantidad_clientes);
 
     if (cc) {
         // ct => cantidad de telefonos agregados. [min = 0, max = 20]
-        u_short ct = agregar_telefono_cliente(&__clientes[__cantidad_clientes].telefonos, __clientes[__cantidad_clientes].cantidad_telefonos);
+        u_short ct = agregar_telefono_cliente(&__clientes[__cantidad_clientes]);
 
         if (ct) {
             __clientes[__cantidad_clientes].cantidad_telefonos += ct;

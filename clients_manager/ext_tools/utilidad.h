@@ -10,12 +10,12 @@
 #include <getopt.h>
 #include <sys/types.h>
 
-#ifdef WIN32 || _WIN32 || __WIN32 || __WIN32__ || WIN64 || _WIN64 || __WIN64 || __WIN64__
-#define CLS_COMMAND "cls"
-#define UNIX_LIKE_SYSTEM 0
-#elif unix || _unix || __unix || __unix__ || linux || _linux || __linux || __linux__ || __APPLE__ || __MACH__ || __CYGWIN__
+#ifdef __unix__
 #define CLS_COMMAND "clear"
 #define UNIX_LIKE_SYSTEM 1
+#elif defined(WIN32) || defined(_WIN32) || defined(__WIN32) || defined(__WIN32__) || defined(WIN64) || defined(_WIN64) || defined(__WIN64) || defined(__WIN64__)
+#define CLS_COMMAND "cls"
+#define UNIX_LIKE_SYSTEM 0
 #endif
 
 void limpiar_pantalla();

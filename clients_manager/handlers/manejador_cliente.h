@@ -17,17 +17,17 @@ void mostrar_telefono_cliente(CLIENTE *from_clientes, long codigo_cliente, long 
 // Funciones para el manejo de clientes
 size_t obtener_clientes_con_telefonos(CLIENTE **out_clientes);
 
-u_short registrar_cliente(CLIENTE **for_clientes, size_t cantidad_clientes);
-u_short eliminar_cliente(CLIENTE **from_clientes, long codigo_cliente);
-u_short actualizar_cliente(CLIENTE **from_clientes, long codigo_cliente);
+u_short registrar_cliente(CLIENTE *for_clientes, size_t cantidad_clientes);
+u_short eliminar_cliente(CLIENTE *from_clientes, long codigo_cliente);
+u_short actualizar_cliente(CLIENTE *from_clientes, long codigo_cliente);
 
 
 // Funciones para el manejo de telefonos
 size_t obtener_telefonos_cliente(TELEFONO **out_telefono, long codigo_cliente);
 
-u_short agregar_telefono_cliente(TELEFONO **for_telefonos, size_t cantidad_telefonos);
-u_short eliminar_telefono_cliente(TELEFONO **from_telefonos, long codigo_telefono);
-u_short actualizar_telefono_cliente(TELEFONO **from_telefonos, long codigo_telefono);
+u_short agregar_telefono_cliente(CLIENTE *for_cliente);
+u_short eliminar_telefono_cliente(TELEFONO *from_telefonos, long codigo_telefono);
+u_short actualizar_telefono_cliente(TELEFONO *from_telefonos, long codigo_telefono);
 
 
 // Funciones para la persistencia de datos
