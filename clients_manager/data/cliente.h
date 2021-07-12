@@ -10,7 +10,8 @@ typedef struct {
     char apellido2_cliente[21];
     char usuario[9];
     char programa[16];
-    char fecha_actual[9];
+    char fecha_actual[10];
+    size_t cantidad_telefonos;
     TELEFONO *telefonos;
 } CLIENTE;
 

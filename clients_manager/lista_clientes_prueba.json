@@ -1,4 +1,5 @@
 {
+    "cantidad_clientes": 3,
     "clientes": [
         {
             "codigo_cliente": 0,
@@ -8,6 +9,7 @@
             "usuario": "issaul",
             "programa": "CDEE",
             "fecha_actual": "06/07/2021",
+            "cantidad_telefonos": 1,
             "telefonos": [
                 {
                     "codigo_telefono": 0,
@@ -26,6 +28,7 @@
             "usuario": "jerajo",
             "programa": "EDEE",
             "fecha_actual": "06/07/2021",
+            "cantidad_telefonos": 1,
             "telefonos": [
                 {
                     "codigo_telefono": 0,
@@ -44,6 +47,7 @@
             "usuario": "jjose",
             "programa": "JCEE",
             "fecha_actual": "06/07/2021",
+            "cantidad_telefonos": 3,
             "telefonos": [
                 {
                     "codigo_telefono": 0,
