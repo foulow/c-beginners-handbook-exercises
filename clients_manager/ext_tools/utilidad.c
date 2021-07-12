@@ -26,7 +26,7 @@ short pausar_confirmar_para_seguir() {
     limpiar_buffer_entrada();
     input = getchar();
 
-    if (input != 'y' && input != 'Y' && input != EOF)
+    if (input != 's' && input != 'S' && input != EOF)
         return -1;
     else
         return 0;

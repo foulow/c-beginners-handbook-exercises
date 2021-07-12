@@ -52,6 +52,7 @@ void mostrar_clientes_con_telefonos(CLIENTE *from_clientes, size_t numero_client
         }
         printf("\n\n");
     }
+    limpiar_buffer_entrada();
     pausar_cualquier_input_para_seguir();
 }
 
@@ -255,6 +256,7 @@ u_short agregar_telefono_cliente(CLIENTE *for_cliente) {
     char input = EOF;
     for (size_t i = cantidad_telefonos; i < MAX_TELEFONOS; i++)
     {
+        printf("Registro de telefono <%lu/%d>:\n", i+1, MAX_TELEFONOS);
         for_telefonos[i].codigo_felefono = i;
 
         printf("Digite el numero: ");
@@ -268,11 +270,12 @@ u_short agregar_telefono_cliente(CLIENTE *for_cliente) {
         strcpy(for_telefonos[i].fecha_actual, for_cliente->fecha_actual);
 
         printf("Deseas seguir agregando mas telefonos? Si<S,s>:\n\n");
+        getchar();
         limpiar_buffer_entrada();
         input = getchar();
 
-        if (input != 'y' && input != 'Y' && input != EOF) {
-            cantidad_telefonos = i;
+        if (input != 's' && input != 'S' && input != EOF) {
+            cantidad_telefonos = i+1;
             break;
         }
     }
@@ -298,43 +301,46 @@ void guardar_registro_clientes(CLIENTE *from_clients, long codigo_cliente) {
     char codigo_cliente_str[4];
     snprintf(codigo_cliente_str, 4, "%lu", cliente->codigo_cliente);
     strcat(json_str, codigo_cliente_str);
-    strcat(json_str, "\"nombre_cliente\": ");
+    strcat(json_str, ", \"nombre_cliente\": \"");
     strcat(json_str, cliente->nombre_cliente);
-    strcat(json_str, "\"apellido1_cliente\": ");
+    strcat(json_str, "\", \"apellido1_cliente\": \"");
     strcat(json_str, cliente->apellido1_cliente);
-    strcat(json_str, "\"apellido2_cliente\": ");
+    strcat(json_str, "\", \"apellido2_cliente\": \"");
     strcat(json_str, cliente->apellido2_cliente);
-    strcat(json_str, "\"usuario\": ");
+    strcat(json_str, "\", \"usuario\": \"");
     strcat(json_str, cliente->usuario);
-    strcat(json_str, "\"programa\": ");
+    strcat(json_str, "\", \"programa\": \"");
     strcat(json_str, cliente->programa);
-    strcat(json_str, "\"fecha_actual\": ");
+    strcat(json_str, "\", \"fecha_actual\": \"");
     strcat(json_str, cliente->fecha_actual);
-    strcat(json_str, "\"cantidad_telefonos\": ");
+    strcat(json_str, "\", \"cantidad_telefonos\": ");
     char cantidad_telefonos_str[3];
     snprintf(cantidad_telefonos_str, 3, "%lu", cliente->cantidad_telefonos);
     strcat(json_str, cantidad_telefonos_str);
-    strcat(json_str, "\"telefonos\": [ ");
+    strcat(json_str, ", \"telefonos\": [ ");
     for (size_t i = 0; i < cliente->cantidad_telefonos; i++)
     {
         TELEFONO *telefono = &*(cliente->telefonos + i);
 
-        strcat(json_str, "{ ");
+        if (i == 0)
+            strcat(json_str, "{ ");
+        else
+            strcat(json_str, ", { ");
         strcat(json_str, "\"codigo_telefono\": ");
         char codigo_telefono_str[3];
         snprintf(codigo_telefono_str, 3, "%lu", telefono->codigo_felefono);
         strcat(json_str, codigo_telefono_str);
-        strcat(json_str, "\"numero\": ");
+        strcat(json_str, ", \"numero\": \"");
         strcat(json_str, telefono->numero);
-        strcat(json_str, "\"usuario\": ");
+        strcat(json_str, "\", \"usuario\": \"");
         strcat(json_str, telefono->usuario);
-        strcat(json_str, "\"programa\": ");
+        strcat(json_str, "\", \"programa\": \"");
         strcat(json_str, telefono->programa);
-        strcat(json_str, "\"fecha_actual\": ");
+        strcat(json_str, "\", \"fecha_actual\": \"");
         strcat(json_str, telefono->fecha_actual);
-        strcat(json_str, " }");
+        strcat(json_str, "\" }");
     }
-    strcat(json_str, "] }");
+    strcat(json_str, " ] }");
 
     struct json_object *new_cliente_obj = json_tokener_parse(json_str);
     json_object_array_add(clientes_obj, new_cliente_obj);

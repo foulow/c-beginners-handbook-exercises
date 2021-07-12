@@ -71,6 +71,32 @@
                     "fecha_actual": "06/07/2021"
                 }
             ]
+        },
+        {
+            "codigo_cliente": 3,
+            "nombre_cliente": "Pablo",
+            "apellido1_cliente": "Matias",
+            "apellido2_cliente": "Morales",
+            "usuario": "pablito",
+            "programa": "SVG",
+            "fecha_actual": "12/7/2021",
+            "cantidad_telefonos": 2,
+            "telefonos": [
+                {
+                    "codigo_telefono": 0,
+                    "numero": "809-231-1633",
+                    "usuario": "pablito",
+                    "programa": "SVG",
+                    "fecha_actual": "12/7/2021"
+                },
+                {
+                    "codigo_telefono": 1,
+                    "numero": "829-231-1633",
+                    "usuario": "pablito",
+                    "programa": "SVG",
+                    "fecha_actual": "12/7/2021"
+                }
+            ]
         }
     ]
 }

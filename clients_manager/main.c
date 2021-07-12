@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
     {
         mostrar_menu_manejador_cliente();
 
+        limpiar_buffer_entrada();
         option = pausar_confirmar_para_seguir();
 
         limpiar_pantalla();
@@ -76,10 +77,12 @@ void mostrar_menu_manejador_cliente() {
         {
         case 1:
             mostrar_sub_menu_registrar_cliente();
+            limpiar_buffer_entrada();
             pausar_cualquier_input_para_seguir();
             break;
         case 2:
             mostrar_clientes_con_telefonos(__clientes, __cantidad_clientes);
+            limpiar_buffer_entrada();
             pausar_cualquier_input_para_seguir();
             break;
         case 3:
@@ -95,6 +98,7 @@ void mostrar_menu_manejador_cliente() {
 void mostrar_sub_menu_registrar_cliente() {
     if (__cantidad_clientes >= MAX_CLIENTES) {
         printf("Error: Limite maximo de clientes alcanzado.\n");
+        limpiar_buffer_entrada();
         pausar_cualquier_input_para_seguir();
 
         return;
@@ -153,22 +157,27 @@ void mostrar_sub_menu_consulta_cliente() {
         {
         case 1:
             mostrar_clientes_con_telefonos(__clientes, __cantidad_clientes);
+            limpiar_buffer_entrada();
             pausar_cualquier_input_para_seguir();
             break;
         case 2:
             // mostrar_cliente_con_telefonos();
+            limpiar_buffer_entrada();
             pausar_cualquier_input_para_seguir();
             break;
         case 3:
             // mostrar_cliente();
+            limpiar_buffer_entrada();
             pausar_cualquier_input_para_seguir();
             break;
         case 4:
             // mostrar_telefonos_cliente();
+            limpiar_buffer_entrada();
             pausar_cualquier_input_para_seguir();
             break;
         case 5:
             // mostrar_telefono_cliente();
+            limpiar_buffer_entrada();
             pausar_cualquier_input_para_seguir();
             break;
         case 6:
