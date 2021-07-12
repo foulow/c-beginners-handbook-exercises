@@ -15,9 +15,11 @@ $> make all
 
 ## clients_manager
 
-To compile this project enter the following command in a terminal with gcc installed.
+To compile this project enter the following command in a terminal with gcc installed. You need to install first the json-c library.
 
 ```bash
 $> cd clients_manager
 $> gcc main.c ./ext_tools/utilidad.c ./handlers/manejador_cliente.c -ljson-c -o client_manager.out
 ```
+
+> Note: the documentation and installation instructions for the json-c library are here: https://json-c.github.io/json-c/json-c-0.15/doc/html/index.html
