@@ -52,8 +52,6 @@ void mostrar_clientes_con_telefonos(CLIENTE *from_clientes, size_t numero_client
         }
         printf("\n\n");
     }
-    limpiar_buffer_entrada();
-    pausar_cualquier_input_para_seguir();
 }
 
 void mostrar_cliente_con_telefonos(CLIENTE *from_clientes, long codigo_cliente) {
@@ -270,9 +268,8 @@ u_short agregar_telefono_cliente(CLIENTE *for_cliente) {
         strcpy(for_telefonos[i].fecha_actual, for_cliente->fecha_actual);
 
         printf("Deseas seguir agregando mas telefonos? Si<S,s>:\n\n");
-        getchar();
         limpiar_buffer_entrada();
-        input = getchar();
+        scanf(" %c", &input);
 
         if (input != 's' && input != 'S' && input != EOF) {
             cantidad_telefonos = i+1;

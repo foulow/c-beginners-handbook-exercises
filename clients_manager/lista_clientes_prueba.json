@@ -1,5 +1,4 @@
 {
-    "cantidad_clientes": 3,
     "clientes": [
         {
             "codigo_cliente": 0,
@@ -95,6 +94,51 @@
                     "usuario": "pablito",
                     "programa": "SVG",
                     "fecha_actual": "12/7/2021"
+                }
+            ]
+        },
+        {
+            "codigo_cliente": 4,
+            "nombre_cliente": "Jonh",
+            "apellido1_cliente": "Salchichon",
+            "apellido2_cliente": "Rambo",
+            "usuario": "lavergan",
+            "programa": "za",
+            "fecha_actual": "12/7/2021",
+            "cantidad_telefonos": 1,
+            "telefonos": [
+                {
+                    "codigo_telefono": 0,
+                    "numero": "123-456-7890",
+                    "usuario": "lavergan",
+                    "programa": "za",
+                    "fecha_actual": "12/7/2021"
+                }
+            ]
+        },
+        {
+            "codigo_cliente": 5,
+            "nombre_cliente": "Mama",
+            "apellido1_cliente": "Tingo",
+            "apellido2_cliente": "Tingo",
+            "usuario": "tingona",
+            "programa": "MMG",
+            "fecha_actual": "19/7/2021",
+            "cantidad_telefonos": 2,
+            "telefonos": [
+                {
+                    "codigo_telefono": 0,
+                    "numero": "1112223333",
+                    "usuario": "tingona",
+                    "programa": "MMG",
+                    "fecha_actual": "19/7/2021"
+                },
+                {
+                    "codigo_telefono": 1,
+                    "numero": "4445556666",
+                    "usuario": "tingona",
+                    "programa": "MMG",
+                    "fecha_actual": "19/7/2021"
                 }
             ]
         }

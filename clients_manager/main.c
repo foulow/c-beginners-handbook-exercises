@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 
         limpiar_pantalla();
 
-    } while(option != -1);
+    } while(option == -1);
 
     limpiar_pantalla();
 
@@ -57,9 +57,8 @@ void mostrar_menu_manejador_cliente() {
             2- Consultar clientes.
             3- Salir.
     */
-    char input = EOF;
-    short option = 0;
 
+    short option = 0;
     do
     {
         limpiar_pantalla();
@@ -70,8 +69,7 @@ void mostrar_menu_manejador_cliente() {
         printf("\t3- Salir. <o EOF>\n\n");
 
         limpiar_buffer_entrada();
-        input = getchar();
-        option = input - '0';
+        scanf("%hd", &option);
 
         switch (option)
         {
@@ -86,10 +84,11 @@ void mostrar_menu_manejador_cliente() {
             pausar_cualquier_input_para_seguir();
             break;
         case 3:
+            limpiar_buffer_entrada();
             option = -1;
             break;
         default:
-            if (input == EOF) option = -1;
+            limpiar_buffer_entrada();
             break;
         }
     } while (option != -1);
@@ -134,9 +133,8 @@ void mostrar_sub_menu_consulta_cliente() {
             4- Mostrar telefono cliente.
             5- Salir.
     */
-    char input = EOF;
-    short option = 0;
 
+    short option = 0;
     do
     {
         limpiar_pantalla();
@@ -150,42 +148,33 @@ void mostrar_sub_menu_consulta_cliente() {
         printf("\t6- Salir. <o EOF>\n\n");
 
         limpiar_buffer_entrada();
-        input = getchar();
-        option = input - '0';
+        scanf("%hd", &option);
 
         switch (option)
         {
         case 1:
             mostrar_clientes_con_telefonos(__clientes, __cantidad_clientes);
-            limpiar_buffer_entrada();
-            pausar_cualquier_input_para_seguir();
             break;
         case 2:
             // mostrar_cliente_con_telefonos();
-            limpiar_buffer_entrada();
-            pausar_cualquier_input_para_seguir();
             break;
         case 3:
             // mostrar_cliente();
-            limpiar_buffer_entrada();
-            pausar_cualquier_input_para_seguir();
             break;
         case 4:
             // mostrar_telefonos_cliente();
-            limpiar_buffer_entrada();
-            pausar_cualquier_input_para_seguir();
             break;
         case 5:
             // mostrar_telefono_cliente();
-            limpiar_buffer_entrada();
-            pausar_cualquier_input_para_seguir();
             break;
         case 6:
             option = -1;
             break;
         default:
-            if (input == EOF) option = -1;
             break;
         }
+        limpiar_buffer_entrada();
+        pausar_cualquier_input_para_seguir();
+
     } while (option != -1);
 }
