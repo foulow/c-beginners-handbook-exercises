@@ -42,6 +42,7 @@ int main(int argc, char *argv[]) {
     } while(option == -1);
 
     limpiar_pantalla();
+    free(__clientes);
 
     return EXIT_SUCCESS;
 }
