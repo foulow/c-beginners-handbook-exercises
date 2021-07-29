@@ -13,11 +13,9 @@
 #include "../ext_tools/utilidad.h"
 #include "./manejador_cliente.h"
 
-#define MEGA_BYTE 1048576 // 1024 x 1024 BYTES
 #define JSON_FILE_NAME "lista_clientes_prueba.json"
 
 struct json_object *__parsed_json_obj;
-struct json_object *__cantidad_clientes_obj;
 
 void _mostrar_datos_cliente(CLIENTE const cliente) {
     printf("Datos para cliente: %lu\n", cliente.codigo_cliente);

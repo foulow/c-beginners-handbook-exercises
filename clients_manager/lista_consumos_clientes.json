@@ -1,0 +1,68 @@
+{
+    "consumos": [
+        [
+            {
+                "codigo_consumo": 0,
+                "fecha_inicio": "12/7/2021",
+                "fecha_cierre": "1/8/2021",
+                "kWh_conumido": 150,
+                "codigo_cliente": 0
+            },
+            {
+                "codigo_consumo": 1,
+                "fecha_inicio": "1/8/2021",
+                "fecha_cierre": "1/9/2021",
+                "kWh_conumido": 178,
+                "codigo_cliente": 0
+            }
+        ],
+        [
+            {
+                "codigo_consumo": 0,
+                "fecha_inicio": "12/7/2021",
+                "fecha_cierre": "1/8/2021",
+                "kWh_conumido": 150,
+                "codigo_cliente": 1
+            },
+            {
+                "codigo_consumo": 1,
+                "fecha_inicio": "1/8/2021",
+                "fecha_cierre": "1/9/2021",
+                "kWh_conumido": 178,
+                "codigo_cliente": 1
+            }
+        ],
+        [
+            {
+                "codigo_consumo": 0,
+                "fecha_inicio": "12/7/2021",
+                "fecha_cierre": "1/8/2021",
+                "kWh_conumido": 150,
+                "codigo_cliente": 2
+            },
+            {
+                "codigo_consumo": 1,
+                "fecha_inicio": "1/8/2021",
+                "fecha_cierre": "1/9/2021",
+                "kWh_conumido": 178,
+                "codigo_cliente": 2
+            }
+        ],
+        [
+            {
+                "codigo_consumo": 0,
+                "fecha_inicio": "12/7/2021",
+                "fecha_cierre": "1/8/2021",
+                "kWh_conumido": 150,
+                "codigo_cliente": 3
+            },
+            {
+                "codigo_consumo": 1,
+                "fecha_inicio": "1/8/2021",
+                "fecha_cierre": "1/9/2021",
+                "kWh_conumido": 178,
+                "codigo_cliente": 3
+            }
+        ]
+    ]
+}

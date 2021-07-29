@@ -6,7 +6,7 @@
 
 typedef struct {
     long codigo_consumo;
-    char fecha_inicio[10];
+    char fecha_inicio[10];  // cada factura se genera el 1ro de cada mes.
     char fecha_cierre[10];
     long kWh_conumido;
     long codigo_cliente;

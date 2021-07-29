@@ -2,9 +2,7 @@
 #define MANEJADOR_CLIENTE_H
 
 #include "../data/cliente.h"
-
-#define MAX_CLIENTES 500
-#define MAX_TELEFONOS 20
+#include "../ext_tools/definiciones.h"
 
 // Funciones para el muestreo de datos
 void mostrar_clientes_con_telefonos(CLIENTE *from_clientes, size_t numero_clientes);
