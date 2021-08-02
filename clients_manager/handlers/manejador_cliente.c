@@ -196,7 +196,7 @@ u_short registrar_cliente(CLIENTE *for_clientes, size_t cantidad_clientes) {
 
     printf("Digite el nombre: ");
     limpiar_buffer_entrada();
-    scanf("%30s", for_clientes[cantidad_clientes].nombre_cliente);
+    scanf("%30[^\n]", for_clientes[cantidad_clientes].nombre_cliente);
 
     printf("Digite el primer apellido: ");
     limpiar_buffer_entrada();
